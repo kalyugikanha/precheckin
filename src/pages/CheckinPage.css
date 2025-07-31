@@ -1,0 +1,138 @@
+/* src/pages/CheckinPage.css - FINAL RESPONSIVE VERSION */
+
+.checkin-page-wrapper {
+  background-color: #f8f9fa; /* Light grey background for the whole page */
+}
+.checkin-page-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* --- Left Panel (Check-in Status) --- */
+.checkin-status-panel {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.875rem;
+  /* NO MORE position: sticky; */
+}
+.checkin-status-panel h2 { font-size: 1.375rem; margin: 0; }
+.description { color: #666; font-size: 0.875rem; margin: 0.5rem 0 1.5rem; line-height: 1.6; }
+.checkin-status-panel h3 { font-size: 1.125rem; margin: 1.875rem 0 1rem; font-weight: 600; color: #333; }
+/* Graph Section */
+.status-container { display: flex; flex-direction: column; align-items: flex-start; }
+.progress-circle-container { display: flex; align-items: center; gap: 1.25rem; width: 100%; }
+.progress-ring { width: 120px; height: 120px; }
+.progress-ring-bg { stroke: #E0E0E0; stroke-width: 12; fill: transparent; }
+.progress-ring-fg { stroke: #00A3AD; stroke-width: 12; fill: transparent; transform-origin: 50% 50%; transform: rotate(-90deg); transition: stroke-dashoffset 0.5s; }
+.progress-text-outside p { margin: 0.3rem 0; font-size: 0.875rem; color: #555; }
+.legend { margin-top: 1rem; display: flex; gap: 1.25rem; }
+.legend p { margin: 0; display: flex; align-items: center; font-size: 0.875rem; color: #555; }
+.legend .dot { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 0.5rem; }
+.legend .checked-in { background: #00A3AD; }
+.legend .not-checked-in { background: #E0E0E0; }
+
+/* Guest List */
+.guest-list { list-style: none; padding: 0; border-top: 1px solid #eee; margin-top: 1rem; }
+.guest-list li { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid #f0f0f0; }
+.guest-info { display: flex; align-items: center; gap: 0.75rem; }
+.guest-info input[type="checkbox"] { width: 20px; height: 20px; accent-color: #00A3AD; }
+.guest-info label { font-weight: 500; }
+.guest-actions { display: flex; align-items: center; gap: 0.6rem; }
+.status-tag.checked { color: #28a745; background-color: #e9f7ec; padding: 0.25rem 0.6rem; border-radius: 20px; font-weight: 500; font-size: 0.8rem; }
+.edit-view-btn { background: #e6f6f7; color: #00A3AD; border: none; border-radius: 6px; padding: 0.5rem 1rem; font-weight: 500; cursor: pointer; }
+.checkin-btn { background: #fff; border: 1px solid #aaa; color: #555; border-radius: 6px; padding: 0.5rem 1rem; cursor: pointer; }
+/* Action Buttons */
+.actions { margin-top: 1.875rem; flex-direction: column ; gap: 1rem; display: flex; }
+.share-btn, .save-btn-dark {
+  flex: 1; padding: 0.9rem; border-radius: 8px; font-weight: 500; font-size: 1rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.share-btn { background: #fff; border: 1px solid #333; color: #333; }
+.save-btn-dark { background: #333; color: white; border: none; }
+/* --- Right Panel (Property Details) --- */
+.property-details-panel {
+  flex: 1.5;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+.property-image { width: 100%; height: 300px; object-fit: cover; }
+.property-info-box { padding: 1.5rem; }
+.property-info-box h2 { font-size: 1.5rem; margin: 0 0 1.25rem; }
+.info-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+.info-item { display: flex; align-items: center; gap: 0.75rem; font-size: 1rem; color: #555; }
+.info-icon { width: 20px; height: 20px; stroke: #888; }
+.property-info-box h3 { font-size: 1.125rem; margin-bottom: 0.6rem; border-top: 1px solid #eee; padding-top: 1.25rem; }
+.address-container { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.6rem; }
+.address-text { flex-grow: 1; }
+.share-icon { width: 20px; height: 20px; stroke: #888; cursor: pointer; }
+.map-container { height: 250px; border-radius: 8px; overflow: hidden; margin-top: 1rem; }
+.map-container iframe { border: 0; }
+
+/*
+=========================================
+--- COMPLETE RESPONSIVE STYLES START HERE ---
+=========================================
+*/
+
+/* For Tablets */
+@media (max-width: 992px) {
+  .checkin-page-layout {
+    flex-direction: column; /* Stack the two panels */
+    gap: 2.5rem;
+    padding: 1.5rem;
+  }
+
+  .checkin-status-panel {
+    position: static; /* Un-stick the panel */
+    width: 100%;
+    order: 2; /* Show the check-in panel below the property details */
+  }
+
+  .property-details-panel {
+    width: 100%;
+    order: 1;
+  }
+}
+
+/* For Mobile Phones */
+@media (max-width: 768px) {
+  .checkin-page-layout {
+    padding: 1rem;
+  }
+  
+  .property-image {
+    height: 250px;
+  }
+
+  .status-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .checkin-page-layout {
+    flex-direction: column;
+  }
+  .checkin-status-panel {
+    width: 100%;
+    order: 1;
+  }
+  .property-details-panel {
+    width: 100%;
+    order: 2;
+  }
+}

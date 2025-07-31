@@ -1,0 +1,299 @@
+/* --- BASE & MOBILE-FIRST STYLES --- */
+.declaration-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.declaration-main {
+  flex-grow: 1;
+  background-color: #f8f9fa;
+  padding: 1.5rem 1rem; /* Adjusted padding for mobile */
+}
+
+.declaration-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- General Section Styling --- */
+.info-section {
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.info-section h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 1.5rem 0; /* Reduced bottom margin */
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* --- Questionnaire Section --- */
+.questionnaire {
+  padding: 0;
+}
+
+.questionnaire-header {
+  background: linear-gradient(135deg, #e8f8f9 0%, #d4f1f4 100%);
+  color: #00a3ad;
+  padding: 1rem 1.5rem;
+  border-radius: 8px 8px 0 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.questionnaire-body {
+  padding: 1.5rem;
+}
+
+.questionnaire-body .form-group {
+  margin-bottom: 1.25rem;
+}
+.questionnaire-body .form-group:last-child { margin-bottom: 0; }
+.questionnaire-body label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.custom-select-wrapper { position: relative; }
+.custom-select-wrapper select {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px !important;
+  background: #ffffff;
+  font-size: 0.875rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.custom-select-wrapper::after {
+  content: '▾';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b7280;
+}
+
+/* --- Main Check-in & Declaration Section --- */
+.main-checkin {
+  padding: 1.5rem;
+}
+
+.section-h3 {
+  text-align: center;
+  font-size: 1.5rem; /* Adjusted for mobile */
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.declaration-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.declaration-text {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+.checkbox-group input[type="checkbox"] { display: none; }
+.checkbox-group label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  cursor: pointer;
+  position: relative;
+  padding-left: 28px;
+}
+.checkbox-group label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 3px;
+  background: #ffffff;
+}
+.checkbox-group input[type="checkbox"]:checked + label::before {
+  background: #00a3ad;
+  border-color: #00a3ad;
+}
+.checkbox-group input[type="checkbox"]:checked + label::after {
+  content: '✓';
+  position: absolute;
+  left: 3px;
+  top: 1px;
+  color: white;
+  font-size: 11px;
+}
+
+/* --- Security Deposit Section --- */
+.deposit-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding-bottom: 1.5rem; /* Add padding at the bottom */
+  margin-bottom: 2rem;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.deposit-box h3 {
+  font-size: 1.25rem; /* Mobile size */
+  font-weight: 600;
+  margin: 0;
+  padding: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Mobile first direction */
+  text-align: center;
+}
+.deposit-info {
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin: 0 1.5rem 1.5rem;
+}
+.deposit-info p {
+  display: flex;
+  flex-direction: column; /* Mobile first */
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.deposit-info .icon-wrapper {
+  display: flex; /* Changed from inline-flex */
+  align-items: center;
+  justify-content: center;
+  background-color: #008281;
+  border-radius: 8px; /* Less rounded */
+  width: 40px;
+  height: 40px;
+  margin-right: 0; /* No margin right on mobile */
+  flex-shrink: 0;
+}
+.deposit-info .icon-wrapper img { width: 20px; height: 20px; }
+.deposit-info .plain-paragraph { color: #717182; padding-top: 0.5rem; }
+
+/* Offer Box */
+.offer-box {
+  background: #D0FDFD;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 0 1.5rem 1.5rem;
+}
+.offer-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.offer-badge .icon {
+  width: 32px; height: 32px; background: #00a3ad; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.offer-badge .icon img { width: 16px; height: 16px; }
+.offer-badge .label {
+  background: #00a3ad; color: white; padding: 0.25rem 0.75rem;
+  border-radius: 4px; font-size: 0.75rem; font-weight: 600;
+}
+.offer-badge .offer-text { font-size: 0.85rem; font-weight: 600; color: #000000; }
+.offer-box p { font-size: 0.85rem; color: #374151; line-height: 1.5; margin: 0; }
+
+/* --- Action Buttons --- */
+.action-btn, .sign-btn, .pay-btn, .continue-btn {
+  width: 100%; /* FULL WIDTH ON MOBILE */
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.sign-btn, .pay-btn {
+  background-color: #0f0e0e;
+  color: white;
+}
+.pay-btn { margin: 0 1.5rem; width: calc(100% - 3rem); /* Adjust for padding */}
+
+.continue-btn {
+  background-color: #00a3ad;
+  color: white;
+  margin-top: 1rem; /* Spacing */
+}
+.continue-btn:disabled { background-color: #d1d5db; cursor: not-allowed; }
+
+.helper-text { text-align: center; color: #9ca3af; font-size: 0.8rem; margin: 0.5rem 0 0; }
+
+.completed { background-color: #10b981 !important; }
+.completed:disabled { opacity: 1 !important; }
+
+/* --- TABLET & LARGER (min-width: 768px) --- */
+@media (min-width: 768px) {
+  .declaration-main {
+    padding: 2rem;
+  }
+  .section-h3 {
+    font-size: 1.75rem;
+  }
+  .deposit-box h3 {
+    font-size: 1.5rem;
+    flex-direction: row; /* Horizontal on larger screens */
+    text-align: left;
+  }
+  .deposit-info p {
+    flex-direction: row; /* Horizontal text and icon */
+    align-items: center;
+    gap: 1rem;
+  }
+  .deposit-info .icon-wrapper {
+    margin-right: 0.5rem;
+  }
+  .pay-btn {
+     margin: 0 auto; /* Center button */
+     max-width: 400px; /* Give it a max-width */
+  }
+}

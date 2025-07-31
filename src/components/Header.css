@@ -1,0 +1,28 @@
+/* src/components/Header/Header.css - FINAL RESPONSIVE */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2.5rem; /* 20px 40px */
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+}
+.header-logo {
+  width: 150px;
+  height: auto; /* Maintain aspect ratio */
+}
+.header-menu-icon {
+  cursor: pointer;
+  color: #333;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 1rem 1.5rem; /* Reduce padding for mobile */
+  }
+  .header-logo {
+    width: 120px; /* Make logo a bit smaller */
+  }
+}
