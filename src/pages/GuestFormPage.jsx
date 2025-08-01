@@ -272,15 +272,19 @@ function GuestFormPage() {
                 type="button" 
                 className="cancel-btn" 
                 onClick={() => navigate(`/checkin/${tripId}`)}
+                
               >
                 Cancel
               </button>
-              <button 
-                type="submit" 
-                className="complete-btn"
-              >
-                Complete Check-in
-              </button>
+            <button 
+  type="submit" 
+  className="complete-btn"
+  onClick={() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }}
+>
+  Complete Check-in
+</button>
             </div>
           </form>
         </div>

@@ -7,7 +7,7 @@ import './DeclarationPage.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import frameIcon from '../assets/Frame.svg';
-import VectorIcon from '../assets/Vector.png';
+import VectorIcon from '../assets/Vector.png';  
 import GiftIcon from '../assets/Gift.png';
 function DeclarationPage() {
   const navigate = useNavigate();
@@ -35,6 +35,7 @@ function DeclarationPage() {
   };
   
   const handleContinue = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     // Navigate to the final success page or back to trips
     toast.success('Check-in Complete!');
     navigate(`/stay-experience/${tripId}`);
@@ -179,7 +180,9 @@ function DeclarationPage() {
               disabled={!isDeclared}
             >
               Continue
+               
             </button>
+   
             <p className="helper-text">Please complete both sections above to continue</p>
           </section>
         </div>

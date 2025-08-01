@@ -79,12 +79,16 @@ const StayExperience = () => {
 
         <div className="se-action-buttons">
           <button 
-            className="se-btn se-btn-download"
-            onClick={() => navigate(`/invoice/${tripId}`)}
-          >
-            <img src={downloadIcon} alt="Download" />
-            Download Invoice
-          </button>
+  className="se-btn se-btn-download"
+  onClick={() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate(`/invoice/${tripId}`);
+  }}
+>
+  <img src={downloadIcon} alt="Download" />
+  Download Invoice
+</button>
+
 
           <button className="se-btn se-btn-refund">
             <img src={refundIcon} alt="Refund" />

@@ -89,21 +89,22 @@ function OtpPage() {
             <h2>Verify your number</h2>
             <p className="subtitle">We've sent the code via SMS to +91 {phoneNumber}</p>
             <form className="otp-form" onSubmit={handleSubmit}>
-              <div className="otp-input-container">
-                {otp.map((data, index) => (
-                  <input
-                    ref={el => inputRefs.current[index] = el}
-                    className="otp-input"
-                    type="text"
-                    maxLength="1"
-                    key={index}
-                    value={data}
-                    onChange={e => handleChange(e.target, index)}
-                    onKeyDown={e => handleKeyDown(e, index)}
-                    onFocus={e => e.target.select()}
-                  />
-                ))}
-              </div>
+             <div className="otp-input-container">
+  {otp.map((data, index) => (
+    <input
+      ref={el => inputRefs.current[index] = el}
+      className="otp-input"
+      type="tel"  
+      inputMode="numeric" 
+      maxLength="1"
+      key={index}
+      value={data}
+      onChange={e => handleChange(e.target, index)}
+      onKeyDown={e => handleKeyDown(e, index)}
+      onFocus={e => e.target.select()}
+    />
+  ))}
+</div>
               <button type="submit" className="continue-btn">Continue</button>
               
               {/* --- THIS IS THE MISSING/UPDATED JSX --- */}
