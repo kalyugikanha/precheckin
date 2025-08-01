@@ -8,7 +8,7 @@ import './FeedbackPage.css';
 import StarRating from '../components/StarRating';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import SubmitIcon from '../assets/Submit.png'
+import submitIcon from '../assets/submit.png'
 import reqIcon from '../assets/req.png'
 import GoogleIcon from '../assets/Google.png'
 import StayExperience from './StayExperience';
@@ -127,7 +127,7 @@ function FeedbackPage() {
             <button className="cancel-btn" onClick={() => navigate(-1)}>Cancel</button>
             <button className="submit-btn" onClick={handleSubmit}>
 <img
-  src={SubmitIcon} // import karke use karo
+  src={submitIcon} // import karke use karo
   alt="Submit"
   className="btn-icon"
   onClick={() => navigate(`/stay-experience/${tripId}`)}
