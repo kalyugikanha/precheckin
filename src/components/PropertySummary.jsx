@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './PropertySummary.css';
-import SarahImage from '../assets/Sarah.jpg';
+import sarahImage from '../assets/sarah.jpg';
 import HouseRulesModal from './HouseRulesModal'; // Make sure this path is correct
 
 function PropertySummary({ trip }) {
@@ -116,7 +116,7 @@ function PropertySummary({ trip }) {
 
         <h3>Your Property Manager</h3>
         <div className="manager-info">
-          <img src={SarahImage} alt={trip.propertyManager.name} />
+          <img src={sarahImage} alt={trip.propertyManager.name} />
           <div>
             <h4>{trip.propertyManager.name}</h4>
             <p>{trip.propertyManager.phone}</p>
