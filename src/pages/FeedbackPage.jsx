@@ -10,7 +10,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import submitIcon from '../assets/submit.png'
 import reqIcon from '../assets/req.png'
-import GoogleIcon from '../assets/Google.png'
+import googleIcon from '../assets/google.png'
 import StayExperience from './StayExperience';
 
 function FeedbackPage() {
