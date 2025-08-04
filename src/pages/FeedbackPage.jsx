@@ -66,7 +66,7 @@ function FeedbackPage() {
             <p className="card-subtitle">Share your experience publicly to help future travelers make informed decisions</p>
             <div className="google-review-widget">
               <div className="widget-header">
-                <img src={GoogleIcon} alt="Google" className="google-logo" />
+                <img src={googleIcon} alt="Google" className="google-logo" />
                 <div>
                   <h4>{trip.title}</h4>
                   <p>{trip.address}</p>

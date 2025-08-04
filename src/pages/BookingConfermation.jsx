@@ -47,7 +47,7 @@ function BookingConfermation() {
           <div className="feedback-bar-content">
             <span className="take-action-tag">★ Take Action</span>
             <h3>Complete Your Stay Experience</h3>
-            <p>Feedback will be active 12 hours before checkout.</p>
+            <p>Feedback will be active 12 hours before checkout. Complete your check-out by Providing your feedback and enjoy 10% off on your next stay with us (valid for 12 months). Once you complete feedback you will land on security deposit from where you can re-collect the amount.</p>
           </div>
       <button className="feedback-btn" onClick={() => navigate(`/feedback/${trip.id}`)}>
   <span className="feedback-text">

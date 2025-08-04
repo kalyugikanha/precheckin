@@ -38,7 +38,7 @@ function DeclarationPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     // Navigate to the final success page or back to trips
     toast.success('Check-in Complete!');
-    navigate(`/stay-experience/${tripId}`);
+    navigate(`/booking-confermation/${tripId}`);
   };
 
   return (

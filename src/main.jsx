@@ -33,17 +33,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/checkin/:tripId" element={<CheckinPage />} />
           <Route path="/checkin/:tripId/guest/:guestId" element={<GuestFormPage />} />
           <Route path="/checkin/:tripId/declaration" element={<DeclarationPage />} />
-          
-          {/* Assuming BookingConfermation has its own path */}
-          {/* Example: <Route path="/booking-confirmation/:tripId" element={<BookingConfermation />} /> */}
-          
+          <Route path="/booking-confermation/:tripId" element={<BookingConfermation />} /> 
           <Route path="/feedback/:tripId" element={<FeedbackPage />} />
-          
-          {/*
-            THIS IS THE FIX:
-            The path "/stay-experience/:tripId" now correctly renders the StayExperience component.
-            The duplicate route has been removed.
-          */}
           <Route path="/stay-experience/:tripId" element={<StayExperience />} />
           <Route path="/invoice/:tripId" element={<InvoicePage />} />
           

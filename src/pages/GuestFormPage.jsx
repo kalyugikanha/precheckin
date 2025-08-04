@@ -142,22 +142,22 @@ function GuestFormPage() {
 
             {/* Address Section */}
             <div className="form-group">
-              <label>Address</label>
+              <label>Address <span className="required">*</span></label>
               <div className="address-row">
                 <select name="city" value={formData.city} onChange={handleChange} required>
-                  <option value="">Enter City</option>
+                  <option value="">Enter City <span className="required">*</span> </option>
                   <option value="Mumbai">Mumbai</option>
                   <option value="Delhi">Delhi</option>
                   <option value="Bangalore">Bangalore</option>
                 </select>
                 <select name="state" value={formData.state} onChange={handleChange} required>
-                  <option value="">Select State</option>
+                  <option value="">Select State <span className="required">*</span></option>
                   <option value="Maharashtra">Maharashtra</option>
                   <option value="Delhi">Delhi</option>
                   <option value="Karnataka">Karnataka</option>
                 </select>
                 <select name="country" value={formData.country} onChange={handleChange} required>
-                  <option value="">Select Country</option>
+                  <option value="">Select Country <span className="required">*</span></option>
                   <option value="India">India</option>
                   <option value="USA">USA</option>
                   <option value="UK">UK</option>
@@ -175,7 +175,7 @@ function GuestFormPage() {
 
             {/* Zip Code */}
             <div className="form-group zip-code-group">
-              <label>Zip Code</label>
+              <label>Zip Code <span className="required">*</span></label>
               <input 
                 type="text" 
                 name="zip" 
@@ -227,7 +227,7 @@ function GuestFormPage() {
                   required
                 />
                 <label htmlFor="declaration">
-                  I declare that the government ID proof, which states name, address, provide a Photo further declares that I will be complying with all regulations applicable to me, including but not limited to the FHRO regulations. I also accept the declaration signed by Marwadi Guest under the Upload or Section name.
+                  I declare that the government ID proof, which states my residential address provide is valid. In case, I am not an NRI  or an OCI card holder, I will provide a valid Visa and I further declare that I will be complying with all  regulations applicable to me, including but limited to the FRRO regulations. I also accept the declaration signed by Me/Main Guest under  the ‘Upload Id’ section here.
                 </label>
               </div>
 
