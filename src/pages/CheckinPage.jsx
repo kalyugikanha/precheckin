@@ -169,7 +169,7 @@ function CheckinPage() {
 
             {/* --- NEW WHATSAPP CONTACT BUTTON --- */}
             <div className="contact-host-section">
-              <h3>Contact Host</h3>
+              <h3> Contact Concierge Here</h3>
               <div className="whatsapp-contact-card" onClick={handleWhatsAppRedirect} role="button" tabIndex="0">
                 <div className="whatsapp-info">
                   <img src={conciergeAvatar} alt="Host Avatar" className="whatsapp-avatar" />
