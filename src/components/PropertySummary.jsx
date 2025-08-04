@@ -7,11 +7,15 @@ function PropertySummary({ trip }) {
   const [showRules, setShowRules] = useState(false);
 
   const handleCopyMapUrl = () => {
-    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(trip.address)}`;
-    navigator.clipboard.writeText(mapUrl).then(() => {
-      alert('Map location link copied!');
-    });
-  };
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(trip.address)}`;
+  navigator.clipboard.writeText(mapUrl).then(() => {
+    toast.success('Map location link copied!');
+  }).catch(err => {
+    toast.error('Could not copy location link.');
+    console.error('Map copy failed', err);
+  });
+};
+
 
   return (
     <div className="property-summary-card">
@@ -97,14 +101,18 @@ function PropertySummary({ trip }) {
         {showRules && <HouseRulesModal onClose={() => setShowRules(false)} />}
 
         <div className="summary-map">
-          <iframe
-            title="property-location"
-            width="100%"
-            height="100%"
-            loading="lazy"
-            allowFullScreen
-            src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyA6gcVSFU1RchSKHy30vFSN3z-LBjoMV2I&q=${encodeURIComponent(trip.address)}`}
-          ></iframe>
+        <div className="map-container">
+  <iframe
+    title="property-location"
+    width="100%"
+    height="100%"
+    loading="lazy"
+    allowFullScreen
+    src={`https://www.google.com/maps/embed/v1/place?key=AlzaSyB61FrvCfD6wFPYN7Q0959cbKXIlkgeGFs&q=${encodeURIComponent(trip.address)}`}
+    style={{ border: 0 }}
+  ></iframe>
+</div>
+
         </div>
 
         <h3>Amenities</h3>
