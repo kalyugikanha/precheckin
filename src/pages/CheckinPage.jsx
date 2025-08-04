@@ -58,17 +58,16 @@ function CheckinPage() {
     });
   };
 
-const handleCopyEmbedMapUrl = () => {
-  const apiKey = 'AlzaSyB61FrvCfD6wFPYN7Q0959cbKXIlkgeGFs'; // Replace with your real key
-  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(trip.address)}`;
-  
-  navigator.clipboard.writeText(embedUrl).then(() => {
-    toast.success('Embed map link copied!');
+const handleCopyMapUrl = () => {
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(trip.address)}`;
+  navigator.clipboard.writeText(mapUrl).then(() => {
+    toast.success('Map location link copied!');
   }).catch(err => {
-    toast.error('Could not copy embed link.');
-    console.error('Embed copy failed', err);
+    toast.error('Could not copy location link.');
+    console.error('Map copy failed', err);
   });
 };
+
 
 
   // --- NEW WHATSAPP HANDLER ---
@@ -166,8 +165,18 @@ const handleCopyEmbedMapUrl = () => {
               <svg className="share-icon" onClick={handleCopyMapUrl} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
             </div>
             <div className="map-container">
-              <iframe title="property-location" width="100%" height="100%" loading="lazy" allowFullScreen src={`https://www.google.com/maps/embed/v1/place?key=AlzaSyB61FrvCfD6wFPYN7Q0959cbKXIlkgeGFs&q=${encodeURIComponent(trip.address)}`}></iframe>
-            </div> 
+          <div className="map-container">
+  <iframe
+    title="property-location"
+    width="100%"
+    height="100%"
+    loading="lazy"
+    allowFullScreen
+    src={`https://www.google.com/maps/embed/v1/place?key=AlzaSyB61FrvCfD6wFPYN7Q0959cbKXIlkgeGFs&q=${encodeURIComponent(trip.address)}`}
+    style={{ border: 0 }}
+  ></iframe>
+</div>
+ </div> 
             <Services />
 
             {/* --- NEW WHATSAPP CONTACT BUTTON --- */}
