@@ -58,15 +58,18 @@ function CheckinPage() {
     });
   };
 
-  const handleCopyMapUrl = () => {
-    const mapUrl = `https://www.google.com/maps/search/?api=&query=${encodeURIComponent(trip.address)}`;
-    navigator.clipboard.writeText(mapUrl).then(() => {
-      toast.success('Map location link copied!');
-    }).catch(err => {
-      toast.error('Could not copy location link.');
-      console.error('Map copy failed', err);
-    });
-  };
+const handleCopyEmbedMapUrl = () => {
+  const apiKey = 'AlzaSyB61FrvCfD6wFPYN7Q0959cbKXIlkgeGFs'; // Replace with your real key
+  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(trip.address)}`;
+  
+  navigator.clipboard.writeText(embedUrl).then(() => {
+    toast.success('Embed map link copied!');
+  }).catch(err => {
+    toast.error('Could not copy embed link.');
+    console.error('Embed copy failed', err);
+  });
+};
+
 
   // --- NEW WHATSAPP HANDLER ---
   const handleWhatsAppRedirect = () => {
