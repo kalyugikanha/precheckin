@@ -52,6 +52,8 @@ function OtpPage() {
 
     if (enteredOtp === correctOtp) {
       alert("OTP Verified Successfully!");
+      localStorage.setItem('authToken', 'loggedin');
+
    navigate('/user-details');
     } else {
       alert("Invalid OTP. Please try again.");

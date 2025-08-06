@@ -26,6 +26,9 @@ function FeedbackPage() {
   const [amenities, setAmenities] = useState(0);
   const [service, setService] = useState(0);
   const [comment, setComment] = useState('');
+  const [propertyManager, setPropertyManager] = useState(0);
+const [caretaker, setCaretaker] = useState(0);
+
 
   useEffect(() => {
     const currentTrip = tripsData.find(t => t.id === parseInt(tripId));
@@ -33,7 +36,7 @@ function FeedbackPage() {
   }, [tripId]);
   
   const handleSubmit = () => {
-      console.log({ overallRating, cleanliness, comfort, location, amenities, service, comment });
+      console.log({ overallRating, cleanliness, comfort, location, amenities, service, comment,caretaker,propertyManager });
       toast.success("Thank you for your valuable feedback!");
       navigate(`/stay-experience/${tripId}`);
   };
@@ -100,6 +103,16 @@ function FeedbackPage() {
                     <label>Cleanliness</label>
                     <StarRating rating={cleanliness} onRatingChange={setCleanliness} />
                 </div>
+                <div className="rating-item">
+  <label>Property Manager</label>
+  <StarRating rating={propertyManager} onRatingChange={setPropertyManager} />
+</div>
+
+<div className="rating-item">
+  <label>Caretaker</label>
+  <StarRating rating={caretaker} onRatingChange={setCaretaker} />
+</div>
+
                 <div className="rating-item">
                     <label>Comfort</label>
                     <StarRating rating={comfort} onRatingChange={setComfort} />

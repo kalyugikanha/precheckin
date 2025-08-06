@@ -334,6 +334,27 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+.stayed-before-group .radio-options {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.stayed-before-group .radio-options label {
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stayed-before-group input[type="radio"] {
+  accent-color: #00A3AD;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
 /* Large Screens (1200px and above) */
 @media (min-width: 1200px) {
   .guest-form-container {

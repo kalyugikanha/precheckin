@@ -13,11 +13,13 @@ function GuestFormPage() {
   const navigate = useNavigate();
   const [guestName, setGuestName] = useState('');
   
-  const [formData, setFormData] = useState({
-    firstName: '', lastName: '', email: '', mobile: '', gender: '', dob: '',
-    city: '', state: '', country: '', address: '', zip: '', idFile: null,
-    declaration: false, gstBill: false, gstNumber: '', businessName: ''
-  });
+const [formData, setFormData] = useState({
+  firstName: '', lastName: '', email: '', mobile: '', gender: '', dob: '',
+  city: '', state: '', country: '', address: '', zip: '', idFile: null,
+  declaration: false, gstBill: false, gstNumber: '', businessName: '',
+  stayedBefore: '' // 👈 added
+});
+
 
   useEffect(() => {
     const trip = tripsData.find(t => t.id === parseInt(tripId));
@@ -174,17 +176,49 @@ function GuestFormPage() {
             </div>
 
             {/* Zip Code */}
-            <div className="form-group zip-code-group">
-              <label>Zip Code <span className="required">*</span></label>
-              <input 
-                type="text" 
-                name="zip" 
-                value={formData.zip} 
-                onChange={handleChange} 
-                placeholder="400001"
-                required 
-              />
-            </div>
+           {/* Zip Code and Stayed Before Row */}
+<div className="form-row">
+  {/* Zip Code */}
+  <div className="form-group zip-code-group">
+    <label>Zip Code <span className="required">*</span></label>
+    <input 
+      type="text" 
+      name="zip" 
+      value={formData.zip} 
+      onChange={handleChange} 
+      placeholder="400001"
+      required 
+    />
+  </div>
+
+  {/* Stayed Before Question */}
+  <div className="form-group stayed-before-group">
+    <label>Have you stayed with us before?</label>
+    <div className="radio-options">
+      <label>
+        <input 
+          type="radio" 
+          name="stayedBefore" 
+          value="Yes" 
+          checked={formData.stayedBefore === 'Yes'} 
+          onChange={handleChange} 
+        />
+        Yes
+      </label>
+      <label>
+        <input 
+          type="radio" 
+          name="stayedBefore" 
+          value="No" 
+          checked={formData.stayedBefore === 'No'} 
+          onChange={handleChange} 
+        />
+        No
+      </label>
+    </div>
+  </div>
+</div>
+
 
             {/* Upload ID */}
             <div className="form-group upload-id-group">
