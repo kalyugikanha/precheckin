@@ -1,5 +1,3 @@
-// src/pages/CheckinPage.jsx - FINAL WORKING VERSION
-
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
@@ -79,6 +77,11 @@ function CheckinPage() {
         <div className="checkin-status-panel">
           <h2>Pre Check-In</h2>
           <p className="description">Welcome to your upcoming stay! Please complete the check-in process for all guests before arrival.</p>
+
+          {/* === NEW INSTRUCTIONAL BOX === */}
+          <div className="checkin-info-box">
+            To ensure seamless entry to the stay, all guests in your group must complete the check-in process. Your check in is not complete till all the guests in the group complete their check in. Thank you for your cooperation!
+          </div>
 
           <h3>Guest Check-in Status</h3>
           <div className="status-container">
@@ -165,7 +168,7 @@ function CheckinPage() {
             <Services />
 
             <div className="contact-host-section">
-              <h3> Contact Concierge </h3>
+              <h3> Contact Concierge </h3>
               <div className="whatsapp-contact-card" onClick={handleWhatsAppRedirect} role="button" tabIndex="0">
                 <div className="whatsapp-info">
                   <img src={conciergeAvatar} alt="Host Avatar" className="whatsapp-avatar" />
